@@ -2,7 +2,7 @@
 A simple app created in BootStrap with help of using Phalcon Framework for basic idea to learn that how easy it is to create a CRUD App in Phalcon.
 
 # Important Notes :
-**REMEMBER :** Before doing anything make sure that you already installed Phalcon Framework or otherwise the project wouldn't work.For that headover to following link as : https://docs.phalconphp.com/en/3.2/installation
+**REMEMBER :** Before doing anything make sure that you already installed Phalcon Framework or otherwise the project wouldn't work. For that headover to following link as : https://docs.phalconphp.com/en/3.2/installation
 
 **NOTE 1 :** Remember to import the Database Backup file namely as `polling-app-db-backup.sql` to your Database.
 
