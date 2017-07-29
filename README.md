@@ -23,3 +23,4 @@ And you will be set.
 
 - [x] Added Cookies feature which will keep track of the polls voted so that it can avoid user from voting the same poll again.
 - [x] Added Flash messages so that user can see flash messages (errors) when doing actions or on revoting again if he already voted.
+- [x] Added jQuery Flash Message Removal with .fadeout() Effect
