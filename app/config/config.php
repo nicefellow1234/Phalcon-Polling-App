@@ -11,8 +11,8 @@ return new \Phalcon\Config([
         'adapter'     => 'Mysql',
         'host'        => 'localhost',
         'username'    => 'root',
-        'password'    => 'cloudy007',
-        'dbname'      => 'phalcon',
+        'password'    => '',
+        'dbname'      => 'polling-app',
         'charset'     => 'utf8',
     ],
     'application' => [
