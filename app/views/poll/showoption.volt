@@ -35,3 +35,13 @@ a {margin:5px;}
 <?php endif; ?>
 	{{ link_to('poll/',"class":"btn btn-default", "Go Back!") }}</p>
 </div>
+
+<script type="text/javascript">
+$("document").ready(function(){
+    setTimeout(function(){
+        $("div.errorTag").fadeOut(500, function() {
+        $(this).remove();
+    });
+    }, 2000 );
+});
+</script>
