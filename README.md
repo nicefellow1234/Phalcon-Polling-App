@@ -3,7 +3,9 @@ A simple app created in BootStrap with help of using Phalcon Framework for basic
 
 # Important Notes :
 **REMEMBER :** Before doing anything make sure that you already installed Phalcon Framework or otherwise the project wouldn't work.
+
 **NOTE 1 :** Remember to import the Database Backup file namely as `polling-app-db-backup.sql` to your Database.
+
 **NOTE 2 :** Remember to update your `setSchema("phalcon");` to your `setSchema("db-name");` in your model files if you were to get table not found errors.
 
 After that navigate to http://yourhost/yourprojectfolder/poll
