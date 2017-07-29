@@ -8,7 +8,7 @@ A simple app created in BootStrap with help of using Phalcon Framework for basic
 
 **NOTE 2 :** Remember to update your `setSchema("phalcon");` to your `setSchema("db-name");` in your model files if you were to get table not found errors.
 
-After that navigate to http://yourhost/yourprojectfolder/poll
+After that navigate to http://yourhost/yourprojectfolder/
 
 And you will be set.
 
