@@ -1,16 +1,18 @@
 <?php $auth = $this->session->get("auth"); ?>
 <br>
 <?php if ($auth): ?>
-<div class="alert alert-success">
+<div class="alert alert-info">
 	Welcome <?php echo $auth["username"]; ?> <span class="pull-right">{{ link_to('poll/logout/' ~ poll.id,"class":"btn btn-danger","style":"margin-top: -7px", "Logout") }}</span>
 </div><?php else: ?>
-<div class="alert alert-success">
+<div class="alert alert-info">
 	Please login for changes <span class="pull-right">{{ link_to('poll/login/',"class":"btn btn-success","style":"margin-top: -7px", "Login") }}</span>
 </div><?php endif; ?>
 
 <style type="text/css">
 a {margin:5px;}
 </style>
+
+{{ flash.output() }}
 
 <h1>{{ poll.question }}</h1>
 <div class="col-sm-8">
