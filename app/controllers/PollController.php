@@ -99,66 +99,66 @@ class PollController extends \Phalcon\Mvc\Controller
     	));
     }
 
-public function voteoptionAction($optionId)
-    {
-    if ($optionId == "")
+    public function voteoptionAction($optionId)
         {
-        $this->response->redirect("/poll");
-        }
-      else
-        {
-        $option = PollsOptions::findFirstById($optionId);
-        if (!$option)
+        if ($optionId == "")
             {
             $this->response->redirect("/poll");
             }
           else
             {
-            $pollId = $option->polls_id;
-            if ($this->cookies->has('voted-polls'))
+            $option = PollsOptions::findFirstById($optionId);
+            if (!$option)
                 {
-                $voted_polls = $this->cookies->get('voted-polls');
-                $voted_polls = explode(",", $voted_polls);
-                if (in_array($pollId, $voted_polls) == false)
-                    {
-                    $option->number_votes++;
-                    $option->save();
-                    array_push($voted_polls, $pollId);
-                    $voted_polls = implode(",", $voted_polls);
-                    $this->cookies->set("voted-polls", $voted_polls, time() + 15 * 86400);
-                    return $this->dispatcher->forward(array(
-                        'action' => 'showoption',
-                        'params' => array(
-                            $option->polls_id
-                        )
-                    ));
-                    }
-                  else
-                    {
-                    $this->flash->error('You have already voted a option!');
-                    return $this->dispatcher->forward(array(
-                        'action' => 'showoption',
-                        'params' => array(
-                            $option->polls_id
-                        )
-                    ));
-                    }
+                $this->response->redirect("/poll");
                 }
               else
                 {
-                $option->number_votes++;
-                $option->save();
-                $this->cookies->set("voted-polls", "$pollId", time() + 15 * 86400);
-                return $this->dispatcher->forward(array(
-                    'action' => 'showoption',
-                    'params' => array(
-                        $option->polls_id
-                    )
-                ));
+                $pollId = $option->polls_id;
+                if ($this->cookies->has('voted-polls'))
+                    {
+                    $voted_polls = $this->cookies->get('voted-polls');
+                    $voted_polls = explode(",", $voted_polls);
+                    if (in_array($pollId, $voted_polls) == false)
+                        {
+                        $option->number_votes++;
+                        $option->save();
+                        array_push($voted_polls, $pollId);
+                        $voted_polls = implode(",", $voted_polls);
+                        $this->cookies->set("voted-polls", $voted_polls, time() + 15 * 86400);
+                        return $this->dispatcher->forward(array(
+                            'action' => 'showoption',
+                            'params' => array(
+                                $option->polls_id
+                            )
+                        ));
+                        }
+                      else
+                        {
+                        $this->flash->error('You have already voted an option!');
+                        return $this->dispatcher->forward(array(
+                            'action' => 'showoption',
+                            'params' => array(
+                                $option->polls_id
+                            )
+                        ));
+                        }
+                    }
+                  else
+                    {
+                    $option->number_votes++;
+                    $option->save();
+                    $this->cookies->set("voted-polls", "$pollId", time() + 15 * 86400);
+                    return $this->dispatcher->forward(array(
+                        'action' => 'showoption',
+                        'params' => array(
+                            $option->polls_id
+                        )
+                    ));
+                    }
                 }
             }
         }
-    }
 
     public function addoptionAction($pollId)
     {
