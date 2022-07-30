@@ -34,14 +34,6 @@ class PollsOptions extends \Phalcon\Mvc\Model
     public $number_votes;
 
     /**
-     * Initialize method for model.
-     */
-    public function initialize()
-    {
-        $this->setSchema("phalcon");
-    }
-
-    /**
      * Returns table name mapped in the model.
      *
      * @return string

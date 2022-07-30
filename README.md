@@ -4,20 +4,17 @@ A simple app created in BootStrap with help of using Phalcon Framework for basic
 # Important Notes :
 **REMEMBER :** Before doing anything make sure that you already installed Phalcon Framework or otherwise the project wouldn't work. For that headover to following link as : https://docs.phalconphp.com/en/3.2/installation
 
-**NOTE 1 :** Remember to import the Database Backup file namely as `polling-app-db-backup.sql` to your Database.
+**NOTE :** Remember to import the Database Backup file namely as `polling-app-db-backup.sql` to your Database.
 
-**NOTE 2 :** Remember to update your `setSchema("phalcon");` to your `setSchema("db-name");` in your model files if you were to get table not found errors.
+**NOTE :** If you are using nginx, setup a vhost using the sample vhost config file provided in the project root directory.
 
-After that navigate to http://yourhost/yourprojectfolder/
+After that navigate to http://yourvhost/yourprojectfolder/
 
 And you will be set.
 
 # Default Admin Credentials
 **Username :** admin
 **Password :** test007
-
-# Demo App :
-**Demo Link :** http://www.huntedhunter.com/phalcon-dev/
 
 # Features :
 

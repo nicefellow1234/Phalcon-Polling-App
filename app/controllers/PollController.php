@@ -19,7 +19,7 @@ class PollController extends \Phalcon\Mvc\Controller
         //$this->view->polls = Polls::find();
     }
 
-    public function logoutAction($pollId)
+    public function logoutAction($pollId = NULL)
     {
         $this->session->destroy();
         // Forward to the login form again

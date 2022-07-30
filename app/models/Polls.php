@@ -24,7 +24,6 @@ class Polls extends \Phalcon\Mvc\Model
      */
     public function initialize()
     {
-        $this->setSchema("phalcon");
         /*$this->hasMany(
             'id',
             'PollsOptions',

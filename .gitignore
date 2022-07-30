@@ -1,0 +1,5 @@
+# Ignore cache files
+/cache/
+
+# Ignore phpstorm files
+.idea

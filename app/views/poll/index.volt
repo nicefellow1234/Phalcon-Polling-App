@@ -21,12 +21,20 @@ a {margin:5px;}
 		</tr>
 	</thead>
 	<tbody>
-	{% for poll in polls %}
-		<tr>
-			<td>{{ poll.question }}</td>
-			<td>{{ link_to('poll/showoption/' ~ poll.id,"class":"btn btn-default btn-sm", "View") }} <?php if ($auth): ?> {{ link_to('poll/editpoll/' ~ poll.id,"class":"btn btn-primary btn-sm", "Edit") }} {{ link_to('poll/deletepoll/' ~ poll.id,"class":"btn btn-danger btn-sm", "Delete") }} <?php endif; ?></td>
-		</tr>
-	{% endfor %}
+	{% if polls|length > 0 %}
+        {% for poll in polls %}
+            <tr>
+                <td>{{ poll.question }}</td>
+                <td>{{ link_to('poll/showoption/' ~ poll.id,"class":"btn btn-default btn-sm", "View") }} <?php if ($auth): ?> {{ link_to('poll/editpoll/' ~ poll.id,"class":"btn btn-primary btn-sm", "Edit") }} {{ link_to('poll/deletepoll/' ~ poll.id,"class":"btn btn-danger btn-sm", "Delete") }} <?php endif; ?></td>
+            </tr>
+        {% endfor %}
+    {% else %}
+        <tr>
+            <td colspan="2">
+                No polls available right now.
+            </td>
+        </tr>
+    {% endif %}
 	</tbody>
 </table>
 <?php if ($auth): ?>
